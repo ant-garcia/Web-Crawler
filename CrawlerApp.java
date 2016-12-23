@@ -1,6 +1,5 @@
 public class CrawlerApp{
     public static void main(String[] args){
-    	CrawlerTest st = new CrawlerTest();
         Crawler crawler = new Crawler();
 		long startTime = System.nanoTime();
     	crawler.search("https://en.wikipedia.org/wiki/Block_(data_storage)");
