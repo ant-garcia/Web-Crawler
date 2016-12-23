@@ -1,7 +1,3 @@
-import java.util.HashSet;
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Executors;
 import java.util.concurrent.CountDownLatch;
@@ -61,10 +57,10 @@ public class Crawler{
 		mExecutor.execute(new CrawlerLeg(url, this));
 		this.mPagesVisited.add(url);
 		try{
-			this.mLatch.await();
+			this.mLatch.await(); //wait for first iteration to finish
 			while(this.mPagesVisited.size() < MAX_PAGES_TO_SEARCH){
 				mExecutor.execute(new CrawlerLeg(this.nextUrl(), this));
-				Thread.sleep(2);
+				Thread.sleep(2); //sleep inorder not to cause nullpointer exceptions
 			}
 			try{
 				mExecutor.shutdown();

@@ -1,10 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
-
 public class CrawlerApp{
     public static void main(String[] args){
     	CrawlerTest st = new CrawlerTest();
